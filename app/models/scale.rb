@@ -1,7 +1,15 @@
 class Scale
 
   NOTES = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]
-  SCALE_MAJOR = [0, 2, 4, 5, 7, 9, 11, 12]
+  MAJOR = [0, 2, 4, 5, 7, 9, 11, 12]
+  MINOR = [0, 2, 3, 5, 7 ,8, 10, 12]
+  IONIAN = [0, 2, 4, 5, 7, 9, 11, 12]
+  DORIAN = [0, 2, 3, 5, 7, 9, 10, 12]
+  PHRYGIAN = [0, 1, 3, 5, 7, 8, 10, 12]
+  LYDIAN = [0, 2, 4, 6, 7, 9, 11, 12]
+  MIXOLYDIAN = [0, 2, 4, 5, 7, 9, 10, 12]
+  AEOLIAN = [0, 2, 3, 5, 7 ,8, 10, 12]
+  LOCRIAN = [0, 1, 3, 5, 6, 8, 10, 12]
 
   def initialize(root_note, scale_type)
     @root_note = root_note
@@ -11,50 +19,9 @@ class Scale
   def notes
     output_array = []
     starting_note = NOTES.index(@root_note)
-    SCALE_MAJOR.each do | offset |
+    MAJOR.each do | offset |
       output_array << NOTES[(starting_note + offset) % 12]
     end
     output_array
   end
-
-
-  def major
-    W W H W W W H
-  end
-
-  def minor
-    W H W W H W W
-  end
-
-  def ionian
-    W W H W W W H
-  end
-
-  def dorian
-    W H W W W H W
-  end
-
-  def phrygian
-    H W W W H W W
-  end
-
-  def lydian
-    W W W H W W H
-  end
-
-  def mixolydian
-    W W H W W H W
-  end
-
-  def aeolian
-    W H W W H W W
-  end
-
-  def locrian
-    H W W H W W W
-  end
-
 end
-
-s = Scale.new('B', 'MAJOR')
-puts s.notes
