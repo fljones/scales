@@ -3,3 +3,8 @@
   %h1.scale_title Scale-o-matic!
   %p.chooser Need help with a scale or mode?
   %p.chooser Chose your root note, then the scale or mode below:
+
+  = select_tag("root_note", options_for_select(Scale::NOTES))
+  = select_tag("selected_scale", options_for_select(Scale::SCALE_LIST))
+  = button_to "Submit"
+

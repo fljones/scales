@@ -10,6 +10,7 @@ class Scale
   MIXOLYDIAN = [0, 2, 4, 5, 7, 9, 10, 12]
   AEOLIAN = [0, 2, 3, 5, 7 ,8, 10, 12]
   LOCRIAN = [0, 1, 3, 5, 6, 8, 10, 12]
+  SCALE_LIST = ["MAJOR", "MINOR", "IONIAN", "DORIAN", "PHRYGIAN", "LYDIAN", "MIXOLYDIAN", "AEOLIAN", "LOCRIAN"]
 
   def initialize(root_note, scale_type)
     @root_note = root_note
