@@ -6,5 +6,5 @@
 
   = select_tag("root_note", options_for_select(Scale::NOTES))
   = select_tag("selected_scale", options_for_select(Scale::SCALE_LIST))
+  = form_tag({action_name: :submit})
   = button_to "Submit"
-
